@@ -1,0 +1,24 @@
+{
+  "name": "hospital-frontend",
+  "version": "1.0.0",
+  "description": "Welcome to NYKN Hospital! This is a Javascript Frontend with Ruby on Rails API Backend to help hospital staff document patient record at each visit and have a record to look back to at a later time.",
+  "main": "index.js",
+  "dependencies": {
+    "gh-pages": "^2.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicholasykng/hospital-frontend.git"
+  },
+  "author": "Nicholas Ng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicholasykng/hospital-frontend/issues"
+  },
+  "homepage": "https://nicholasykng.github.io/hospital-frontend/"
+}

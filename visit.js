@@ -39,7 +39,7 @@ function addVisit() {
         description: document.getElementById('description').value,
         patient_id: document.getElementById('visit-patientId').value
     }
-    fetch('http://localhost:3000/visits', {
+    fetch('https://nykn-hospital-backend.herokuapp.com/visits', {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -67,7 +67,7 @@ function addVisitsListeners() {
 
 function deleteVisit() {
     let visitId = this.parentElement.getAttribute('data-visit-id')
-    fetch(`http://localhost:3000/visits/${visitId}`, {
+    fetch(`https://nykn-hospital-backend.herokuapp.com/visits/${visitId}`, {
         method: "DELETE"
     })
     .then(resp => resp.json())
@@ -80,7 +80,7 @@ function deleteVisit() {
 
 function editVisit() {
     let visitId = this.parentElement.getAttribute('data-visit-id')
-    fetch(`http://localhost:3000/visits/${visitId}`)
+    fetch(`https://nykn-hospital-backend.herokuapp.com/visits/${visitId}`)
     .then(resp => resp.json())
     .then(data => {
         completeVisitForm(data)
@@ -114,7 +114,7 @@ function updateVisit() {
         description: visitForm.querySelector('#description').value,
         patient_id: visitForm.querySelector('#visit-patientId').value
     }
-    fetch(`http://localhost:3000/visits/${visitId}`, {
+    fetch(`https://nykn-hospital-backend.herokuapp.com/visits/${visitId}`, {
         method: "PATCH",
         headers: {
             "Content-Type": "application/json", 

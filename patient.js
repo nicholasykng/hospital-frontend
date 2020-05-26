@@ -48,7 +48,7 @@ class Patient {
 }
 
 function getPatients() {
-    fetch("http://localhost:3000/patients")
+    fetch("https://nykn-hospital-backend.herokuapp.com/patients")
     .then(response => response.json())
     .then(data => {
         renderPatients(data)
@@ -90,7 +90,7 @@ function createPatient() {
         age: document.getElementById('age').value,
         date_of_birth: document.getElementById('date_of_birth').value
     }
-    fetch("http://localhost:3000/patients", {
+    fetch("https://nykn-hospital-backend.herokuapp.com/patients", {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",
@@ -134,7 +134,7 @@ function updatePatient() {
         age: document.getElementById('age').value,
         date_of_birth: document.getElementById('date_of_birth').value
     }
-    fetch(`http://localhost:3000/patients/${patientId}`, {
+    fetch(`https://nykn-hospital-backend.herokuapp.com/patients/${patientId}`, {
         method: "PATCH",
         headers: {
             "Content-Type": "application/json",
@@ -152,7 +152,7 @@ function updatePatient() {
 
 function editPatient() {
     let patientId = this.parentElement.getAttribute('data-patient-id')
-    fetch(`http://localhost:3000/patients/${patientId}`)
+    fetch(`https://nykn-hospital-backend.herokuapp.com/patients/${patientId}`)
     .then(resp => resp.json())
     .then(data => {
         Patient.editPatientForm()
@@ -168,7 +168,7 @@ function editPatient() {
 
 function deletePatient() {
     let patientId = this.parentElement.getAttribute('data-patient-id')
-    fetch(`http://localhost:3000/patients/${patientId}`, {
+    fetch(`https://nykn-hospital-backend.herokuapp.com/patients/${patientId}`, {
         method: "DELETE"
     })
     .then(resp => resp.json())
@@ -186,7 +186,7 @@ function sortPatient() {
 
 function sortPatientsAlpha() {
     console.log("Testing")
-    fetch('http://localhost:3000/patients')
+    fetch('https://nykn-hospital-backend.herokuapp.com/patients')
     .then(resp => resp.json())
     .then(json => {
         json.sort(function(a, b) {
